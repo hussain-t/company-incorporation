@@ -7,7 +7,7 @@ This is a light version that simulates the company incorporation. This project u
 👉 Stepper (wizard) library that stores data in a context API\
 👉 Form library that stores form data and errors in a context API
 
-# Getting Started with Create React App
+# Getting started with the project
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
