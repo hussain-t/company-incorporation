@@ -54,13 +54,19 @@ const BoardOfDirectors = ({ stepId }) => {
     stepperState.steps
   );
   const cofounder = useReadStepData("FoundingTeam", stepperState.steps);
+  const boardOfDirectors = useReadStepData(
+    "BoardOfDirectors",
+    stepperState.steps
+  );
 
   const founders = [incorporatorInfo, cofounder];
   const initialFormState = founders.reduce(
     (acc, cur) => ({
       ...acc,
-      ...(cur.name && { [cur.name]: true }),
-      ...(cur.cofounderName && { [cur.cofounderName]: false }),
+      ...(cur.name && { [cur.name]: boardOfDirectors?.[cur.name] ?? true }),
+      ...(cur.cofounderName && {
+        [cur.cofounderName]: boardOfDirectors?.[cur.cofounderName] ?? false,
+      }),
     }),
     {}
   );

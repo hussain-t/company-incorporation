@@ -16,8 +16,6 @@ const FoundingTeamInner = ({ stepId }) => {
   const [disabled, setDisabled] = useState(false);
   const coFounder = formData.hasCofounder;
 
-  console.log("errors", errors);
-
   useEffect(() => {
     const hasError = errors.find(
       (e) =>
@@ -78,17 +76,18 @@ const FoundingTeamInner = ({ stepId }) => {
 };
 
 const FoundingTeam = ({ stepId }) => {
-  const initialFormState = {
-    hasCofounder: false,
-    cofounderName: "",
-    cofounderEmail: "",
-  };
-
   const { stepperState } = useStepper(stepId);
   const incorporatorInfo = useReadStepData(
     "AddIncorporator",
     stepperState.steps
   );
+  const foundingTeam = useReadStepData("FoundingTeam", stepperState.steps);
+
+  const initialFormState = {
+    hasCofounder: foundingTeam?.hasCofounder || false,
+    cofounderName: foundingTeam?.cofounderName || "",
+    cofounderEmail: foundingTeam?.cofounderEmail || "",
+  };
 
   /**
    * Adds custom validation to the form,

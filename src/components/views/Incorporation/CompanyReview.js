@@ -15,7 +15,6 @@ const CompanyReview = ({ stepId }) => {
     "BoardOfDirectors",
     stepperState.steps
   );
-  console.log("boardOfDirectors", boardOfDirectors);
 
   return (
     <div>

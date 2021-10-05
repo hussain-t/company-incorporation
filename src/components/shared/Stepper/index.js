@@ -29,7 +29,6 @@ const StepperInner = ({ children }) => {
         return null;
       })
       .filter(Boolean);
-    console.log("childStepsToUse", childStepsToUse);
 
     // Store the steps in the stepper context
     actions.setSteps(steps);
@@ -47,11 +46,11 @@ const StepperInner = ({ children }) => {
      * Call the onInit function from the current step component
      * We can pass any values to the `onInit` function
      */
-    currentStep.onInit && currentStep.onInit(currentStep.id);
+    currentStep?.onInit?.(currentStep.id);
   }, [currentStep]);
 
   return React.cloneElement(stepToRender, {
-    stepId: currentStep.id,
+    stepId: currentStep?.id,
   });
 };
 

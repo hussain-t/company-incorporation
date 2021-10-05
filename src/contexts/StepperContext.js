@@ -11,7 +11,6 @@ const ActionKeys = {
   SET_STEP_DATA: "SET_STEP_DATA",
   SET_CURRENT_STEP_DATA: "SET_CURRENT_STEP_DATA",
   SET_COMPLETE_STEP: "SET_COMPLETE_STEP",
-  CLEAN_STEPS: "CLEAN_STEPS",
 };
 
 const StepperContext = React.createContext({});
@@ -86,11 +85,6 @@ const reducer = (state, action) => {
       nextState.currentStep = getCurrentStep(state, action.payload.step);
       nextState.version += 1;
       return nextState;
-    /**
-     *  Cleans the state
-     */
-    case ActionKeys.CLEAN_STEPS:
-      return initialState;
     default:
       throw new Error("Action type is not supported");
   }
@@ -137,11 +131,6 @@ const StepperContextProvider = ({ children }) => {
           data,
           step: state.currentStep + 1,
         },
-      });
-    },
-    cleanSteps: () => {
-      dispatch({
-        type: ActionKeys.CLEAN_STEPS,
       });
     },
   };

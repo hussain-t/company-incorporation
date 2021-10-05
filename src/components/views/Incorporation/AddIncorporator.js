@@ -3,9 +3,10 @@ import {
   FormContextProvider,
   FormContext,
 } from "../../../contexts/FormContext";
-import useStepper from "../../../hooks/useStepper";
 import FormInput from "../../shared/FormInput";
 import Button from "../../shared/Button";
+import useStepper from "../../../hooks/useStepper";
+import useReadStepData from "../../../hooks/useReadStepData";
 
 const AddIncorporatorInner = ({ stepId }) => {
   const {
@@ -62,10 +63,15 @@ const AddIncorporatorInner = ({ stepId }) => {
 };
 
 const AddIncorporator = ({ stepId }) => {
+  const { stepperState } = useStepper(stepId);
+  const incorporatorInfo = useReadStepData(
+    "AddIncorporator",
+    stepperState.steps
+  );
   const initialFormState = {
-    name: "",
-    email: "",
-    phone: "",
+    name: incorporatorInfo?.name || "",
+    email: incorporatorInfo?.email || "",
+    phone: incorporatorInfo?.phone || "",
   };
   const validators = {};
   return (
