@@ -43,7 +43,7 @@ const FoundingTeamInner = ({ stepId }) => {
         <FormInput
           type="checkbox"
           name="hasCofounder"
-          label="Do you have co-founders"
+          label="Do you have co-founders?"
         />
         {coFounder ? (
           <div className="team-container">
@@ -90,6 +90,11 @@ const FoundingTeam = ({ stepId }) => {
     stepperState.steps
   );
 
+  /**
+   * Adds custom validation to the form,
+   * so that two cofounders cannot have
+   * the same name or email addresses.
+   */
   const validators = {
     cofounderName: (val) => {
       let error;

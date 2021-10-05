@@ -3,7 +3,9 @@ import { FormContext } from "../../../contexts/FormContext";
 import "./FormInput.css";
 
 const ErrorMessage = ({ children }) => (
-  <p style={{ color: "red", fontWeight: "bold", margin: 0 }}>{children}</p>
+  <p style={{ color: "red", fontWeight: "bold", margin: "0 0 10px" }}>
+    {children}
+  </p>
 );
 
 const WrapWithLabel = ({ label, inputControl, name, errorMessage }) => (
