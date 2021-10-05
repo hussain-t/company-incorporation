@@ -1,0 +1,13 @@
+label {
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 2px solid #2f4bde;
+}
