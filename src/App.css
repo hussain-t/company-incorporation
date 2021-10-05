@@ -1,12 +1,7 @@
 .container {
   background-color: #eaecf7;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
-  margin: 0 auto;
   overflow: hidden;
-  margin: 2em;
   padding: 2em;
   box-shadow: 3px 3px 15px 0 #dadada;
 }
@@ -17,10 +12,6 @@
 
 @media (min-width: 992px) {
   .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 5em;
     padding: 4em;
     width: 50%;
     overflow: hidden;
