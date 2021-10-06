@@ -7,9 +7,10 @@ const SetupConfirmation = ({ stepId }) => {
   return (
     <div>
       <h2>
-        Congratulations! You have successfully incorporated{" "}
+        Congratulations! You have successfully setup your company{" "}
         {companyDetails.companyName} 🎉
       </h2>
+      <p>It will take 3-5 days to incorporate your company in Delaware.</p>
     </div>
   );
 };

@@ -45,7 +45,7 @@ const CompanyReview = ({ stepId }) => {
       <Card>
         <h2>Board of Directors</h2>
         {Object.entries(boardOfDirectors).map(([key, value]) => (
-          <p>
+          <p key={key}>
             {key} - {value ? "Yes" : "No"}
           </p>
         ))}

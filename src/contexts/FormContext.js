@@ -13,7 +13,10 @@ const initialState = {
   validators: null,
 };
 
-const handlerInput = (state, target) => {
+/**
+ * Handles/validates form input changes
+ */
+const handleInputChanges = (state, target) => {
   const { name, value, checked, type } = target;
   const { data: formData, errors, validators } = state;
 
@@ -28,7 +31,7 @@ const handlerInput = (state, target) => {
   const newErrors = errors.filter((e) => !e.hasOwnProperty(name));
   let validationResult;
   /**
-   * Check if custom validator is passed
+   * Check if the custom validator is passed
    * in the FormContext Provider
    */
   if (validators[name] && typeof validators[name] === "function") {
@@ -59,7 +62,7 @@ const handlerInput = (state, target) => {
 const reducer = (state, action) => {
   switch (action.type) {
     case ActionKeys.VALIDATE:
-      const { data, errors } = handlerInput(state, action.payload);
+      const { data, errors } = handleInputChanges(state, action.payload);
       return {
         ...state,
         data,

@@ -73,7 +73,10 @@ const AddIncorporator = ({ stepId }) => {
     email: incorporatorInfo?.email || "",
     phone: incorporatorInfo?.phone || "",
   };
+
+  // Can have custom validations
   const validators = {};
+
   return (
     <FormContextProvider
       initialFormState={initialFormState}

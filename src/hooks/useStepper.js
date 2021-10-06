@@ -1,6 +1,11 @@
 import { useMemo, useContext } from "react";
 import { StepperContext } from "../contexts/StepperContext";
 
+/**
+ *
+ * @param {string} stepId
+ * @returns memoized stepperActions, stepperState and currentStepData
+ */
 const useStepper = (stepId) => {
   const { state, actions } = useContext(StepperContext);
 

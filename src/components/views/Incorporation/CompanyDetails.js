@@ -61,7 +61,9 @@ const CompanyDetails = ({ stepId }) => {
     website: companyDetails?.website || "",
   };
 
+  // Can have custom validations
   const validators = {};
+
   return (
     <FormContextProvider
       initialFormState={initialFormState}
